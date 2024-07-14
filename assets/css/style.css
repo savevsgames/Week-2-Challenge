@@ -5,6 +5,7 @@
 /* brand color palette */
 :root {
   --primary: rgba(68, 88, 119, 1);
+  --primary-alpha: rgba(68, 88, 119, 0.7);
   --secondary: rgba(146, 204, 206, 1);
   --tertiary: rgba(49, 52, 61, 1);
   --dark: rgba(28, 29, 33, 1);
@@ -14,7 +15,8 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
   color: var(--primary);
   background-color: var(--light);
   line-height: 1.5;
@@ -37,19 +39,28 @@ header {
   padding: 15px 6% 15px 0;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: start;
   flex-wrap: wrap;
   align-items: center;
   background-color: var(--tertiary);
   box-shadow: 0 5px 35px rgba(146, 204, 206, 0.4);
+  gap: 10px 0 10px 0;
+}
+
+header img {
+  display: flex;
+  flex: 0 0 100px;
+  margin: 0;
+  border: 5px solid var(--secondary);
+  background-color: var(--primary);
 }
 
 header h1 {
   color: var(--tertiary);
   background-color: var(--secondary);
-  padding: 5px 1% 5px 6%;
+  padding: 5px 1% 0 6%;
   margin: 0;
-  font-size: 4vw;
+  font-size: 2vw;
   line-height: 1;
 }
 
@@ -57,6 +68,16 @@ nav {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  margin: 0 0 0 auto;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  padding: 0;
+  margin: 20px;
+  gap: 20px;
 }
 
 nav a {
@@ -64,7 +85,11 @@ nav a {
   padding: 5px 10px;
   color: var(--secondary);
   margin-right: 10px;
-  background-image: linear-gradient(270deg, var(--secondary) 0%, var(--secondary) 100%);
+  background-image: linear-gradient(
+    270deg,
+    var(--secondary) 0%,
+    var(--secondary) 100%
+  );
   background-repeat: no-repeat;
   background-size: 100% 0.2em;
   background-position: bottom;
@@ -88,7 +113,8 @@ main {
 
 .hero-banner {
   background: rgb(68, 88, 120);
-  background-image: url("../images/02-hero-bg.jpg"), linear-gradient(180deg, var(--secondary) 0%, var(--primary) 100%);
+  background-image: url("../images/02-hero-bg.jpg"),
+    linear-gradient(180deg, var(--secondary) 0%, var(--primary) 100%);
   background-size: cover;
   background-position: center;
   background-blend-mode: soft-light;
@@ -156,7 +182,7 @@ main {
 
 .flex-item {
   border: 5px solid var(--secondary);
-  background-color: var(--primary);
+  background-color: var(--primary-alpha);
   color: var(--tertiary);
   min-height: 150px;
   max-height: 150px;
@@ -170,16 +196,23 @@ main {
   background-size: 150%;
   transition: all 0.5s;
   font-size: 0.9rem;
+  
+  position: relative;
 }
 
 /* feature first portfolio item */
 .flex-item:first-child {
-    min-height: 400px;
-    flex-basis: 100%;
+  min-height: 400px;
+  flex-basis: 100%;
 }
 
 .flex-item:hover {
   background-color: rgba(0, 0, 0, 0.3);
+}
+
+.flex-item:click {
+  color: var(--tertiary);
+  text-decoration: none;
 }
 
 .flex-item div {
@@ -191,21 +224,36 @@ main {
   font-size: 1.6rem;
 }
 
-.contact address {
+
+.contact {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
-  height: 100%;
+  flex-direction: row;
+  flex-wrap: nowrap;
 }
 
+
+.contact address {
+}
+
+.contact address nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+} 
+  
 .contact address a {
   color: var(--tertiary);
   padding: 5px;
   text-decoration: none;
   font-size: 1.3rem;
   font-style: normal;
-  background-image: linear-gradient(270deg, var(--primary) 0%, var(--primary) 100%);
+  background-image: linear-gradient(
+    270deg,
+    var(--primary) 0%,
+    var(--primary) 100%
+  );
   background-repeat: no-repeat;
   background-size: 100% 0.2em;
   background-position: bottom;
@@ -221,24 +269,94 @@ main {
 
 /* portfolio project images */
 /* TODO: Add portfolio project images here using background images*/
-.run-buddy {
-  
+.htmlcss {
+  background-image: url("https://camo.githubusercontent.com/3795e5487dfe7c70b09b3e40c9d7a170bbb61aaec2b8bc35a2b4d0b5af1205ca/68747470733a2f2f7777772e69696d2e66722f65636f6c652d7765622f77702d636f6e74656e742f75706c6f6164732f323031372f30312f48544d4c352e6a7067");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
 }
 
-.led-wall {
-  
+.javascript {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
 }
 
-.react-calc {
-  
+.nodejs {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/1200px-Node.js_logo.svg.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
 }
 
-.pastel-puzzles {
-  
+.python {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
 }
 
-.surf-report {
-  
+.ai {
+  background-image: url("https://saltwire.imgix.net/2024/2/7/openai-developing-software-that-operates-devices-automates-ta_vgHqNaw.jpg?cs=srgb&fit=crop&h=568&w=847&dpr=1&auto=enhance%2Ccompress%2Cformat");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+footer p {
+  margin: 0;
+  padding: 10px;
+  background-color: var(--secondary);
+  color: var(--tertiary);
+  font-size: 1.2rem;
 }
 
 /* media queries */
