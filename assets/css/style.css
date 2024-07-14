@@ -113,7 +113,7 @@ main {
 
 .hero-banner {
   background: rgb(68, 88, 120);
-  background-image: url("../images/02-hero-bg.jpg"),
+  background-image: url("https://images.pexels.com/photos/614117/pexels-photo-614117.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"),
     linear-gradient(180deg, var(--secondary) 0%, var(--primary) 100%);
   background-size: cover;
   background-position: center;
@@ -125,6 +125,17 @@ main {
   justify-content: flex-end;
   align-items: flex-end;
   text-align: right;
+  position: relative;
+}
+
+.hero-banner img {
+  position: absolute;
+  left: 60px;
+  bottom: 60px;
+  border-radius: 100%;
+  overflow: hidden;
+  width: 150px;
+  height: 150px;
 }
 
 .hero-banner div {
@@ -196,7 +207,7 @@ main {
   background-size: 150%;
   transition: all 0.5s;
   font-size: 0.9rem;
-  
+
   position: relative;
 }
 
@@ -207,7 +218,7 @@ main {
 }
 
 .flex-item:hover {
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.0);
 }
 
 .flex-item:click {
@@ -224,13 +235,11 @@ main {
   font-size: 1.6rem;
 }
 
-
 .contact {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
 }
-
 
 .contact address {
 }
@@ -241,8 +250,8 @@ main {
   justify-content: space-between;
   align-items: center;
   height: 100%;
-} 
-  
+}
+
 .contact address a {
   color: var(--tertiary);
   padding: 5px;
